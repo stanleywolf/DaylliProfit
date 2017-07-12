@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _20.dayliProfit
+{
+    class dayliProfit
+    {
+        static void Main(string[] args)
+        {
+            byte n = byte.Parse(Console.ReadLine());
+            double m = double.Parse(Console.ReadLine());
+            double rate = double.Parse(Console.ReadLine());
+            var oneProfitMonth = n * m;
+            var yearProfit = (oneProfitMonth * 12) + (oneProfitMonth * 2.5);
+            var rent = yearProfit / 100 * 25;
+            var clearProfitYear = (yearProfit - rent)*rate;
+            var clearProfit = clearProfitYear / 365;
+            Console.WriteLine("{0:f2}", clearProfit);
+        }
+    }
+}
